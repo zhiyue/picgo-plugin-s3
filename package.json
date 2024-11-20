@@ -12,7 +12,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
     "dev": "tsc -w -p .",
-    "pub": "rm -rf dist/* && npm build && npm publish",
+    "pub": "rm -rf dist/* && npm run build && npm publish",
     "push": "git push origin main && git push origin --tags",
     "patch": "npm version patch -m 'bump version into v%s'",
     "minor": "npm version minor -m 'bump version into v%s'",

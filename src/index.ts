@@ -188,7 +188,7 @@ export = (ctx: PicGo) => {
     ctx.helper.uploader.register("aws-s3", {
       handle,
       config,
-      name: "Amazon S3",
+      name: "Amazon S3 Own",
     })
   }
   return {
