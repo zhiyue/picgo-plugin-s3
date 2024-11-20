@@ -155,7 +155,7 @@ export = (ctx: PicGo) => {
         item: item,
         acl: userConfig.acl,
         urlPrefix,
-        trimmedUploadPath: userConfig.trimmedUploadPath || "",
+        trimmedUploadPath: formatPath(item, userConfig.trimmedUploadPath),
       }),
     )
 
