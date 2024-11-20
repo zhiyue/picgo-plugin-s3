@@ -16,7 +16,7 @@ export = (ctx: PicGo) => {
       acl: "public-read",
       urlSuffix: "",
     }
-    let userConfig = ctx.getConfig<IS3UserConfig>("picBed.aws-s3")
+    let userConfig = ctx.getConfig<IS3UserConfig>("picBed.aws-s3-own")
     userConfig = { ...defaultConfig, ...(userConfig || {}) }
     return [
       {
@@ -131,7 +131,7 @@ export = (ctx: PicGo) => {
   }
 
   const handle = async (ctx: PicGo) => {
-    const userConfig: IS3UserConfig = ctx.getConfig("picBed.aws-s3")
+    const userConfig: IS3UserConfig = ctx.getConfig("picBed.aws-s3-own")
     if (!userConfig) {
       throw new Error("Can't find amazon s3 uploader config")
     }
@@ -185,7 +185,7 @@ export = (ctx: PicGo) => {
   }
 
   const register = () => {
-    ctx.helper.uploader.register("aws-s3", {
+    ctx.helper.uploader.register("aws-s3-own", {
       handle,
       config,
       name: "Amazon S3 Own",
