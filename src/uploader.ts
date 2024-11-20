@@ -70,6 +70,7 @@ interface createUploadTaskOpts {
   index: number
   acl: string
   urlPrefix?: string
+  trimmedUploadPath?: string
 }
 
 async function createUploadTask(
@@ -115,7 +116,11 @@ async function createUploadTask(
       return Promise.reject(err)
     }
   } else {
-    url = `${opts.urlPrefix}/${opts.path}`
+    if (opts.trimmedUploadPath) {
+      url = `${opts.urlPrefix}/${opts.trimmedUploadPath}`
+    } else {
+      url = `${opts.urlPrefix}/${opts.path}`
+    }
   }
 
   return {

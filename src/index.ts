@@ -151,11 +151,12 @@ export = (ctx: PicGo) => {
         client,
         index: idx,
         bucketName: userConfig.bucketName,
-        path: formatPath(item, userConfig.trimmedUploadPath || userConfig.uploadPath),
+        path: formatPath(item, userConfig.uploadPath),
         item: item,
         acl: userConfig.acl,
         urlPrefix,
-      })
+        trimmedUploadPath: userConfig.trimmedUploadPath || "",
+      }),
     )
 
     let results: IUploadResult[]
