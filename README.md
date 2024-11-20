@@ -16,7 +16,7 @@ GUI 直接搜索 _S3_ 下载即可，Core 版执行 `picgo add s3` 安装。
 ### 配置 Configuration
 
 ```sh
-picgo set uploader aws-s3
+picgo set uploader aws-s3-own
 ```
 
 | Key                        | 说明                                               | 例子                                                                                                                                          |
@@ -59,7 +59,7 @@ picgo set uploader aws-s3
 ### 示例 Example
 
 ```json
-    "aws-s3": {
+    "aws-s3-own": {
       "accessKeyID": "xxx",
       "secretAccessKey": "xxxxx",
       "bucketName": "my-bucket",
